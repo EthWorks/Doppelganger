@@ -1,6 +1,10 @@
 # doppelgänger
 _doppelgänger /ˈdɒp(ə)lˌɡaŋə,ˈdɒp(ə)lˌɡɛŋə/ - an apparition or double of a living person_
 
+
+[![Build Status](https://travis-ci.com/EthWorks/doppelganger.svg?branch=master)](https://travis-ci.com/EthWorks/doppelganger)
+
+
 Library for mocking smart contract dependencies during unit testing.
 
 ## Install
