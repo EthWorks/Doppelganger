@@ -1,0 +1,5 @@
+node_modules
+dist
+yarn-error.log
+lib/contracts
+test_cli_head.env

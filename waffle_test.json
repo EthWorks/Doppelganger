@@ -1,0 +1,4 @@
+{
+  "sourcesPath": "./test/helpers/contracts",
+  "targetPath": "./test/helpers/interfaces"
+}

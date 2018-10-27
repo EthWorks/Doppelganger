@@ -1,0 +1,10 @@
+node_modules
+.idea
+.vscode
+.travis.yml
+.soliumrc.json
+.soliumignore
+yarn-error.log
+test
+waffle_lib.json
+waffle_test.json

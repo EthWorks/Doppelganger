@@ -1,0 +1,38 @@
+{
+  "name": "ethereum-doppelganger",
+  "version": "0.0.1",
+  "description": "Smart contract mocking library",
+  "author": "Antoni Kedracki",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "yarn build:sol && yarn build:js",
+    "build:js": "yarn babel ./lib -d ./dist --copy-files",
+    "build:sol": "yarn waffle ./waffle_lib.json",
+    "test": "mocha",
+    "test:build:sol" : "yarn waffle ./waffle_test.json",
+    "dev:lint": "eslint lib test && solium -d contracts/"
+  },
+  "dependencies": {
+    "ethereum-waffle": "^0.2.3",
+    "babel-runtime": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "ganache-core": "^2.2.1",
+    "sinon": "^6",
+    "sinon-chai": "^3.2.0",
+    "solium": "^1.1.8"
+  }
+}

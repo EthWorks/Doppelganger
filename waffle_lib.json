@@ -1,0 +1,4 @@
+{
+  "sourcesPath": "./contracts",
+  "targetPath": "./lib/contracts"
+}
