@@ -1,6 +1,6 @@
 {
   "name": "ethereum-doppelganger",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Smart contract mocking library",
   "repository": "https://github.com/EthWorks/Doppelganger.git",
   "author": "Antoni Kedracki <account@ethworks.io> (http://ethworks.io)",
@@ -8,6 +8,7 @@
   "private": false,
   "main": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "yarn build",
     "build": "yarn build:sol && yarn build:js",
     "build:js": "yarn babel ./lib -d ./dist --copy-files",
     "build:sol": "yarn waffle ./waffle_lib.json",

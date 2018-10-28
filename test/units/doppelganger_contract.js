@@ -27,7 +27,7 @@ describe('Doppelganger - Contract', () => {
     const readSignature = '0x57de26a4';
 
     beforeEach(async () => {
-      pretender = new ethers.Contract(contract.address, JSON.parse(Counter.interface), wallet);
+      pretender = new ethers.Contract(contract.address, Counter.interface, wallet);
     });
 
     it('returns preprogrammed return values for mocked functions', async () => {

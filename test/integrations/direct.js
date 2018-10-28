@@ -19,7 +19,7 @@ describe('Doppelganger - Integration (called directly)', () => {
   });
 
   beforeEach(async () => {
-    doppelganger = new Doppelganger(JSON.parse(Counter.interface));
+    doppelganger = new Doppelganger(Counter.interface);
     await doppelganger.deploy(wallet);
     pretendedContract = doppelganger.pretendedContract(wallet);
   });

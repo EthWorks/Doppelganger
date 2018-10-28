@@ -20,7 +20,7 @@ describe('Doppelganger - Integration (called by other contract)', () => {
   });
 
   beforeEach(async () => {
-    doppelganger = new Doppelganger(JSON.parse(Counter.interface));
+    doppelganger = new Doppelganger(Counter.interface);
     await doppelganger.deploy(wallet);
     capContract = await deployContract(wallet, Cap, [doppelganger.address]);
   });
