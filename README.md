@@ -1,4 +1,5 @@
-# doppelgänger
+![Doppelganger](https://raw.githubusercontent.com/EthWorks/Doppelganger/master/assets/doppelganger-logo-512w.png "Doppelganger")
+
 _doppelgänger /ˈdɒp(ə)lˌɡaŋə,ˈdɒp(ə)lˌɡɛŋə/ - an apparition or double of a living person_
 
 
