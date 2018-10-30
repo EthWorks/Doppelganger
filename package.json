@@ -1,6 +1,6 @@
 {
   "name": "ethereum-doppelganger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Smart contract mocking library",
   "repository": "https://github.com/EthWorks/Doppelganger.git",
   "author": "Antoni Kedracki <account@ethworks.io> (http://ethworks.io)",
