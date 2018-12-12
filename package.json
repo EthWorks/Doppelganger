@@ -1,6 +1,6 @@
 {
   "name": "ethereum-doppelganger",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Smart contract mocking library",
   "repository": "https://github.com/EthWorks/Doppelganger.git",
   "author": "Antoni Kedracki <account@ethworks.io> (http://ethworks.io)",
@@ -17,11 +17,11 @@
     "dev:lint": "eslint lib test && solium -d contracts/"
   },
   "dependencies": {
-    "ethers": "^3.0.27",
-    "ethereum-waffle": "^0.2.3",
+    "ethers": "^4.0.18",
     "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
+    "ethereum-waffle": "^1.0.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
