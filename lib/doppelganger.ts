@@ -1,7 +1,10 @@
-import {utils, Contract, Wallet} from 'ethers';
+import { utils, Contract, Wallet } from 'ethers';
 import deployDoppelgangerContract from './deploy';
 
-const prepareAbi = (abiOrString: any) => (typeof abiOrString === 'string' ? JSON.parse(abiOrString) : abiOrString);
+const prepareAbi = (abiOrString: any) => (typeof abiOrString === 'string'
+  ? JSON.parse(abiOrString)
+  : abiOrString
+);
 
 export default class Doppelganger {
   abi: any;
@@ -9,10 +12,10 @@ export default class Doppelganger {
   [key: string]: any;
 
   constructor(abiOrString: any, contractInstance?: Contract) {
-    this.abi = prepareAbi(abiOrString);
+    this.abi = prepareAbi(abiOrString); // This is not needed and untested
     this.contractInstance = contractInstance;
 
-    const {functions} = new utils.Interface(this.abi);
+    const { functions } = new utils.Interface(this.abi);
     const encoder = new utils.AbiCoder();
     for (const funcName of Object.keys(functions)) {
       const func = functions[funcName];
@@ -22,7 +25,7 @@ export default class Doppelganger {
           const encoded = encoder.encode(func.outputs, args);
           // This will throw an exception when instance is undefined!
           await this.contractInstance!.mockReturns(func.sighash, encoded);
-        }
+        },
       };
     }
   }
