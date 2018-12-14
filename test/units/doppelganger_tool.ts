@@ -1,20 +1,21 @@
-import chai, {expect} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
+import { use, expect } from 'chai';
+import chaiAsPromised = require('chai-as-promised');
+import sinon = require('sinon');
+import sinonChai = require('sinon-chai');
+import { Contract } from 'ethers';
 
 import Doppelganger from '../../lib/doppelganger';
-import Counter from '../helpers/interfaces/Counter';
+const Counter = require('../helpers/interfaces/Counter.json');
 
-chai.use(chaiAsPromised);
-chai.use(sinonChai);
+use(chaiAsPromised);
+use(sinonChai);
 
 describe('Doppelgenger - Tool', () => {
-  let doppelgenger;
-  let contractStub;
+  let doppelgenger: Doppelganger;
+  let contractStub: Contract;
 
   beforeEach(async () => {
-    contractStub = {
+    contractStub = <any>{
       mockReturns: sinon.stub(),
       address: '0xABCD'
     };

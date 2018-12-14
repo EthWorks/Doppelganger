@@ -8,34 +8,32 @@
   "private": false,
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "yarn build",
-    "build": "yarn build:sol && yarn build:js",
-    "build:js": "yarn babel ./lib -d ./dist --copy-files",
+    "prepublishOnly": "rm -rf dist && yarn build",
+    "build": "yarn build:sol && yarn build:ts && yarn build:copyFiles",
     "build:sol": "yarn waffle ./waffle_lib.json",
-    "test": "mocha",
-    "test:build:sol" : "yarn waffle ./waffle_test.json",
-    "dev:lint": "eslint lib test && solium -d contracts/"
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:copyFiles": "cp -r lib/contracts dist/contracts",
+    "test": "mocha \"test/**/*.ts\"",
+    "test:build:sol": "yarn waffle ./waffle_test.json",
+    "dev:lint": "solium -d contracts/"
   },
   "dependencies": {
-    "ethers": "^4.0.18",
-    "babel-runtime": "^6.26.0"
+    "ethers": "^4.0.18"
   },
   "devDependencies": {
-    "ethereum-waffle": "^1.0.5",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mocha": "^5.2.5",
+    "@types/sinon": "^7.0.0",
+    "@types/sinon-chai": "^3.2.2",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-mocha": "^5.2.0",
+    "ethereum-waffle": "^1.0.5",
     "ganache-core": "^2.2.1",
     "sinon": "^6",
     "sinon-chai": "^3.2.0",
-    "solium": "^1.1.8"
+    "solium": "^1.1.8",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
   }
 }

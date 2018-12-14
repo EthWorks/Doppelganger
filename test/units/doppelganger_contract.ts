@@ -1,17 +1,17 @@
-import chai, {expect} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { use, expect } from 'chai';
+import chaiAsPromised = require('chai-as-promised');
 import {createMockProvider, getWallets} from 'ethereum-waffle';
-import {Contract, utils} from 'ethers';
+import {Contract, utils, Wallet} from 'ethers';
 
 import deployDoppelganger from '../../lib/deploy';
-import Counter from '../helpers/interfaces/Counter';
+const Counter = require('../helpers/interfaces/Counter.json');
 
-chai.use(chaiAsPromised);
+use(chaiAsPromised);
 
 describe('Doppelganger - Contract', () => {
   let provider;
-  let wallet;
-  let contract;
+  let wallet: Wallet;
+  let contract: Contract;
 
   before(async () => {
     provider = createMockProvider();
@@ -23,7 +23,7 @@ describe('Doppelganger - Contract', () => {
   });
 
   describe('mocking mechanism', () => {
-    let pretender;
+    let pretender: Contract;
     const readSignature = '0x57de26a4';
 
     beforeEach(async () => {

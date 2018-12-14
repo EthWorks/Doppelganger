@@ -1,18 +1,19 @@
-import chai, {expect} from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { use, expect } from 'chai';
+import chaiAsPromised = require('chai-as-promised');
+import { Wallet, Contract } from 'ethers';
 import {createMockProvider, deployContract, getWallets} from 'ethereum-waffle';
 
 import Doppelganger from '../../lib';
-import Counter from '../helpers/interfaces/Counter';
-import Cap from '../helpers/interfaces/Cap';
+const Counter = require('../helpers/interfaces/Counter.json');
+const Cap = require('../helpers/interfaces/Cap.json');
 
-chai.use(chaiAsPromised);
+use(chaiAsPromised);
 
 describe('Doppelganger - Integration (called by other contract)', () => {
   let provider;
-  let wallet;
-  let doppelganger;
-  let capContract;
+  let wallet: Wallet;
+  let doppelganger: Doppelganger;
+  let capContract: Contract;
 
   before(async () => {
     provider = createMockProvider();
