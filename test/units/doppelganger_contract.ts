@@ -1,25 +1,20 @@
 import { use, expect } from 'chai';
 import chaiAsPromised = require('chai-as-promised');
-import { createMockProvider, getWallets } from 'ethereum-waffle';
-import { Contract, utils, Wallet } from 'ethers';
+import { createMockProvider, getWallets, deployContract } from 'ethereum-waffle';
+import { Contract, utils } from 'ethers';
 
-import deployDoppelganger from '../../lib/deploy';
+import DoppelgangerContract from '../../lib/Doppelganger.json';
 const Counter = require('../helpers/interfaces/Counter.json');
 
 use(chaiAsPromised);
 
 describe('Doppelganger - Contract', () => {
-  let provider;
-  let wallet: Wallet;
+  const provider = createMockProvider();
+  const [wallet] = getWallets(provider);
   let contract: Contract;
 
-  before(async () => {
-    provider = createMockProvider();
-    [wallet] = await getWallets(provider);
-  });
-
   beforeEach(async () => {
-    contract = await deployDoppelganger(wallet);
+    contract = await deployContract(wallet, DoppelgangerContract);
   });
 
   describe('mocking mechanism', () => {

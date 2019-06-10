@@ -7,9 +7,8 @@
     "target": "es5",
     "strict": true,
     "declaration": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "shims"
-    ]
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   }
 }
