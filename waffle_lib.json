@@ -1,4 +1,10 @@
 {
   "sourcesPath": "./contracts",
-  "targetPath": "./lib/contracts"
+  "targetPath": "./lib",
+  "solcVersion": "v0.4.24+commit.e67f0147",
+  "compilerOptions": {
+    "optimizer": {
+      "enabled": true
+    }
+  }
 }

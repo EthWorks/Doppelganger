@@ -1,23 +1,25 @@
 {
   "name": "ethereum-doppelganger",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Smart contract mocking library",
   "repository": "https://github.com/EthWorks/Doppelganger.git",
   "author": "Antoni Kedracki <account@ethworks.io> (http://ethworks.io)",
   "license": "MIT",
   "private": false,
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "rm -rf dist && yarn build",
-    "build": "yarn build:sol && yarn build:ts && yarn build:copyFiles",
+    "prepublishOnly": "yarn build",
+    "build": "rm -rf dist && yarn build:sol && yarn build:ts",
     "build:sol": "yarn waffle ./waffle_lib.json",
-    "build:ts": "tsc -p tsconfig.build.json",
-    "build:copyFiles": "cp -r lib/contracts dist/contracts",
+    "build:ts": "tsc",
     "test": "mocha \"test/**/*.ts\"",
     "test:build:sol": "yarn waffle ./waffle_test.json",
     "dev:lint": "tslint lib/**/*.ts test/**/*.ts && solium -d contracts/"
   },
   "dependencies": {
+    "@types/ganache-core": "^2.1.2",
+    "ethereum-waffle": "^2.0.12",
     "ethers": "^4.0.18"
   },
   "devDependencies": {
@@ -28,8 +30,6 @@
     "@types/sinon-chai": "^3.2.2",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "ethereum-waffle": "^1.0.5",
-    "ganache-core": "^2.2.1",
     "sinon": "^6",
     "sinon-chai": "^3.2.0",
     "solium": "^1.1.8",
