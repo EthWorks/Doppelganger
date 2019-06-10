@@ -1,11 +1,11 @@
 import { use, expect } from 'chai';
-import chaiAsPromised = require('chai-as-promised');
-import sinon = require('sinon');
-import sinonChai = require('sinon-chai');
+import chaiAsPromised from 'chai-as-promised';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 import { Contract } from 'ethers';
 
 import Doppelganger from '../../lib';
-const Counter = require('../helpers/interfaces/Counter.json');
+import Counter from '../helpers/interfaces/Counter.json';
 
 use(chaiAsPromised);
 use(sinonChai);

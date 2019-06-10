@@ -1,10 +1,10 @@
 import { use, expect } from 'chai';
-import chaiAsPromised = require('chai-as-promised');
+import chaiAsPromised from 'chai-as-promised';
 import { createMockProvider, getWallets, deployContract } from 'ethereum-waffle';
 import { Contract, utils } from 'ethers';
 
 import DoppelgangerContract from '../../lib/Doppelganger.json';
-const Counter = require('../helpers/interfaces/Counter.json');
+import Counter from '../helpers/interfaces/Counter.json';
 
 use(chaiAsPromised);
 

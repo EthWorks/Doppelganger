@@ -1,5 +1,5 @@
 import { use, expect } from 'chai';
-import chaiAsPromised = require('chai-as-promised');
+import chaiAsPromised from 'chai-as-promised';
 import { createMockProvider, deployContract, getWallets } from 'ethereum-waffle';
 
 import Doppelganger from '../../lib';
