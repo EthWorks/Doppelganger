@@ -1,3 +1,7 @@
+## Depreciation notice
+This npm is deprecated and not supported anymore. 
+For smart contract mocking functionality use [@ethereum-waffle/mock-contract](https://github.com/EthWorks/Waffle/tree/master/waffle-mock-contract).
+
 ![Doppelganger](https://raw.githubusercontent.com/EthWorks/Doppelganger/master/assets/doppelganger-logo-512w.png "Doppelganger")
 
 _doppelgänger /ˈdɒp(ə)lˌɡaŋə,ˈdɒp(ə)lˌɡɛŋə/ - an apparition or double of a living person_
